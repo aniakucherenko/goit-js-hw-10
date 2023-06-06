@@ -1,46 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-/* Загальні стилі */
 body {
-  font-family: 'Bubblegum Sans', cursive;
-  background-color: #fff5f5;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f2f8d8;
 }
 
-/* Стилі для випадаючого списку */
 .breed-select {
   font-size: 1rem;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #e1f5a6;
   border-radius: 5px;
   background-color: #fff;
   color: #333;
 }
 
-/* Стилі для помилки */
 .error {
   color: red;
 }
 
-/* Стилі для блоку з інформацією про кота */
 .cat-info {
   margin-top: 20px;
 }
 
 .cat-info .wrapper {
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
 
 .cat-info h2 {
-  font-size: 2.5rem;
-  color: #ff69b4;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 30px;
+  color: #606060;
 }
 
 .cat-info .cat-description {
-  font-style: italic;
-  color: #666;
+  color: #606060;
 }
 
 .cats-img {
