@@ -40,7 +40,7 @@ fetchBreeds
         loader.classList.add('is-hidden');
         catInfo.innerHTML = catElements.join('');
       }, 500);
-      Notiflix.Notify.Failure('Error');
+      Notiflix.Notify.failure('Error');
     });
   })
   .catch(() => {
@@ -49,7 +49,7 @@ fetchBreeds
     breedSelect.classList.remove('is-hidden');
 
     error.classList.add('is-hidden');
-    Notiflix.Notify.Failure('Error');
+    Notiflix.Notify.failure('Error');
   });
 
 const breedSelection = event => {
@@ -75,7 +75,7 @@ const breedSelection = event => {
       catInfo.innerHTML = catElements.join('');
     }, 500);
 
-    Notiflix.Notify.Failure('Error');
+    Notiflix.Notify.failure('Error');
   });
 };
 
