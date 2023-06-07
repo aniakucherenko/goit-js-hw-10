@@ -17,11 +17,10 @@ fetchBreeds
     const catListName = response
       .map(cat => `<option value="${cat.id}">${cat.name}</option>`)
       .join('');
-
     breedSelect.innerHTML = catListName;
 
     fetchCatByBreed(breedSelect.value).then(response => {
-      loader.classList.remove('is-hidden');
+      // loader.classList.remove('is-hidden');
       const cats = response.map(item => item.breeds[0]);
       const catElements = cats.map(
         cat => `
