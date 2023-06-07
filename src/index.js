@@ -1,6 +1,7 @@
 import Notiflix from 'notiflix';
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
 // import SlimSelect from 'slim-select';
+// import 'slim-select/dist/slimselect.css';
 
 const breedSelect = document.querySelector('.breed-select');
 const loader = document.querySelector('.loader');
@@ -20,8 +21,8 @@ fetchBreeds
     breedSelect.innerHTML = catListName;
 
     fetchCatByBreed(breedSelect.value).then(response => {
+      loader.classList.remove('is-hidden');
       const cats = response.map(item => item.breeds[0]);
-
       const catElements = cats.map(
         cat => `
         <div class='wrapper'> 
@@ -29,25 +30,19 @@ fetchBreeds
           <h2>${cat.name}</h2>
           <p class="cat-description">${cat.description}</p>
           <p class="cat-description">Temperament: ${cat.temperament}</p>
-        </div>
-      `
+        </div>`
       );
       catInfo.innerHTML = '';
 
-      loader.classList.remove('is-hidden');
-
-      setTimeout(() => {
-        loader.classList.add('is-hidden');
-        catInfo.innerHTML = catElements.join('');
-      }, 500);
-      Notiflix.Notify.failure('Error');
+      // setTimeout(() => {
+      //   loader.classList.add('is-hidden');
+      //   catInfo.innerHTML = catElements.join('');
+      // }, 500);
     });
   })
   .catch(() => {
     loader.classList.add('is-hidden');
-
     breedSelect.classList.remove('is-hidden');
-
     error.classList.add('is-hidden');
     Notiflix.Notify.failure('Error');
   });
@@ -75,7 +70,7 @@ const breedSelection = event => {
       catInfo.innerHTML = catElements.join('');
     }, 500);
 
-    Notiflix.Notify.failure('Error');
+    // Notiflix.Notify.failure('Error');
   });
 };
 
